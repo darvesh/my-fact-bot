@@ -31,3 +31,19 @@ module.exports.date = async (axios, ctx) => {
 	const response = await axios(encodeURI(`http://numbersapi.com/${url}`));
 	ctx.reply(response.data);
 };
+
+module.exports.year = async (axios, ctx) => {
+	const message = ctx.message.text.slice(6).replace(/\s+/, " ");
+	const number = message.split(" ")[0];
+	const url = number === "" ? `random/year` : `${number}/year`;
+	const response = await axios(encodeURI(`http://numbersapi.com/${url}`));
+	ctx.reply(response.data);
+};
+
+module.exports.trivia = async (axios, ctx) => {
+	const message = ctx.message.text.slice(8).replace(/\s+/, " ");
+	const number = message.split(" ")[0];
+	const url = number === "" ? `random/trivia` : `${number}/trivia`;
+	const response = await axios(encodeURI(`http://numbersapi.com/${url}`));
+	ctx.reply(response.data);
+};
