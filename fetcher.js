@@ -47,3 +47,17 @@ module.exports.trivia = async (axios, ctx) => {
 	const response = await axios(encodeURI(`http://numbersapi.com/${url}`));
 	ctx.reply(response.data);
 };
+
+module.exports.cat = async (axios, ctx) => {
+	const response = await axios(
+		encodeURI(`https://cat-fact.herokuapp.com/facts/random?animal_type=cat`)
+	);
+	ctx.reply(response.data.text);
+};
+
+module.exports.dog = async (axios, ctx) => {
+	const response = await axios(
+		encodeURI(`https://cat-fact.herokuapp.com/facts/random?animal_type=dog`)
+	);
+	ctx.reply(response.data.text);
+};
