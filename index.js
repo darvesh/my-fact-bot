@@ -6,7 +6,9 @@ const fetcher = require("./fetcher");
 
 const bot = new Telegraf(config.BOT_TOKEN);
 
-bot.start(ctx => ctx.replyWithHTML(constants.help));
+bot.command("start", ctx =>
+	ctx.replyWithHTML(constants.help(), Extra.webPreview(false))
+);
 bot.command("math", ctx => fetcher.math(axios, ctx));
 bot.command("date", ctx => fetcher.date(axios, ctx));
 bot.command("year", ctx => fetcher.year(axios, ctx));
