@@ -1,6 +1,6 @@
 # Number Fact Bot
 A telegram bot for facts and trivia.
-## Telegram Link : [num-fact-bot](https://t.me/numfactbot)
+## Telegram Link : [My Fact Bot](https://t.me/myfact_bot)
 
 APIs used:
 * [NumbersAPI](http://numbersapi.com/)
